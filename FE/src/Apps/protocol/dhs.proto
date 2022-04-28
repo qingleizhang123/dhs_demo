@@ -1,0 +1,27 @@
+import "dhs_enums.proto";
+
+package DHS.ProtoBuf;
+
+message File{
+    required string filename = 1; //文件名
+    required uint64 size = 2;     //文件大小（Byte）
+    required bytes data = 3;      //文件数据
+	required string md5 = 4;      //文件md5校验码
+}
+
+message Files{
+	repeated File file = 1; 
+}
+
+//导入结果推送
+message BEHandleResult{
+	required DHS.ProtoBuf.ResultType type = 1;   //结果类型
+	required bool result = 2;                       //结果(true / false)
+	optional string ErrorInfo = 3;	                //错误信息
+}
+
+//进度推送
+message Progress{
+	required DHS.ProtoBuf.ProgressType type = 1;  //进度类型
+	required float progress = 2;                     //进度值
+}

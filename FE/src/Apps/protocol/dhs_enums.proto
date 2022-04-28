@@ -1,0 +1,15 @@
+package DHS.ProtoBuf;
+
+//事件类型
+enum ResultType{
+	RENDER = 0;			   //渲染
+	CSW = 1;			   //下位机
+	FTP_UPLOAD = 2;		   //FTP上传
+	FILE_VERIFICATION = 3; //文件校验
+	FILE_RECEIVE = 4;      //文件接收
+};
+
+//进度类型
+enum ProgressType{
+	IMPORT = 0;            //导入
+}
